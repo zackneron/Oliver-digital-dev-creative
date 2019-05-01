@@ -1,0 +1,81 @@
+<!doctype html> 
+<html> 
+	<head>
+		<script src="https://s0.2mdn.net/ads/studio/Enabler.js" type="text/javascript"></script>	
+		<meta charset="utf-8"/>
+		<meta name="ad.size" content="width=728,height=90">
+		<meta name="viewport" content="width=device-width, initial-scale=1"/> 
+		<title>Google Statements | Digital Garage 728x90</title>
+		<style>
+			html {box-sizing:border-box;}
+			*,:after,:before {box-sizing:inherit;}
+			body,html {margin:0; padding:0;}
+			.size {width:728px; height:90px;}
+			.absolute {position:absolute;}
+			#banner {overflow:hidden;}
+			#loading {background:#fff;}
+			#borders {border:1px solid #646464;z-index: 1030;}
+			.hidden {opacity:0;}
+		</style>
+		<script language="javascript">
+		function init() {
+			if(Enabler.isPageLoaded()){
+				politeInit();
+			}else{
+				Enabler.addEventListener(studio.events.StudioEvent.PAGE_LOADED, politeInit);
+			} 
+		}
+
+		function politeLoad(a, b) {
+		    var f, c = a.length,
+		        d = 0,
+		        e = function() {
+		            if(++d === c && b){
+		            	b();
+		            }
+		        };
+		    for (f = 0; c > f; f++) {
+		    	Enabler.loadScript(a[f], e);
+		    }
+		}
+
+		function politeInit() {
+		    politeLoad(["https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js",
+		    	"script.js"], function() {
+		        Banner.init();
+		    });
+		    var a = document.createElement("link");
+		    a.setAttribute("rel", "stylesheet");
+		    a.setAttribute("type", "text/css");
+		    a.setAttribute("href", Enabler.getUrl("styles.css"));
+		    document.getElementsByTagName("head")[0].appendChild(a);
+		    document.getElementById("banner").style.opacity = 1;
+		    document.getElementById("banner").style.display = "block";
+		}
+
+		if (Enabler.isInitialized()) {
+			init();
+		} else {
+			Enabler.addEventListener(studio.events.StudioEvent.INIT, init);
+		}
+		</script>
+	</head> 
+	<body>
+		<div id="banner" class="absolute size" style="display: none; opacity: 0;">
+
+			<img id="copy1" class="absolute horz-center" width="396" height="77" src="copy1.svg">
+			<div id="scribble" class="absolute hidden"> </div>
+			<img id="top_grad" class="absolute center" width="728" height="90" src="grad.png">
+			<img id="copy2" class="absolute hidden center" width="350" height="30" src="copy2.png">
+			<img id="logo" class="absolute hidden center" width="105" height="50" src="logo.svg">
+			<img id="bottom_grad" class="absolute hidden center" width="728" height="90" src="grad.png">
+						
+			<div id="main-click" class="absolute size click"> </div>
+			<img id="replay" class="hidden absolute click" width="25" height="25" src="replay.svg">
+
+		</div>
+		<div id="loading" class="absolute size"></div>
+		<div id="borders" class="absolute size"></div>
+
+	</body> 
+</html> 
